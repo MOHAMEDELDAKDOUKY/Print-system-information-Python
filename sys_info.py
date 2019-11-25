@@ -1,5 +1,5 @@
 import wmi
-
+lspci -v -s `lspci | awk '/VGA/{print $1}'`
 computer = wmi.WMI()
 computer_info = computer.Win32_ComputerSystem()[0]
 os_info = computer.Win32_OperatingSystem()[0]
